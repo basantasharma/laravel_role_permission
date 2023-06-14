@@ -9,6 +9,7 @@ use Illuminate\Support\ServiceProvider;
 
 
 use App\Http\Controllers\UsersRolesController;
+use App\Http\Controllers\UsersPermissionsController;
 
 class AppServiceProvider extends ServiceProvider
 {

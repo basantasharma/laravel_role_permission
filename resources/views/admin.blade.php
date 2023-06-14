@@ -30,6 +30,7 @@
         <div class="container-fluid py-3 h-60">
           <div class="row d-flex justify-content-center align-items-center h-60">
             {{-- <div class="col-12 col-md-6 col-lg-4 col-xl-3 m-2"> --}}
+              @permission('editor')
               <div class="col-12 col-md-6 col-lg-4 col-xl-2 m-2">
                 <div class="card shadow-2-strong" style="border-radius: 1rem;">
                   <div class="card-body p-4 text-left">
@@ -47,7 +48,8 @@
                   </div>
                 </div>
               </div>
-
+              @endpermission
+              @permission('editor')
               <div class="col-12 col-md-6 col-lg-4 col-xl-3 m-2">
                 <div class="card shadow-2-strong" style="border-radius: 1rem;">
                   <div class="card-body p-4 text-left">
@@ -70,7 +72,7 @@
                   </div>
                 </div>
               </div>
-
+              @endpermission
               <div class="col-12 col-md-6 col-lg-4 col-xl-3 m-2">
                 <div class="card shadow-2-strong" style="border-radius: 1rem;">
                   <div class="card-body p-4 text-left">
