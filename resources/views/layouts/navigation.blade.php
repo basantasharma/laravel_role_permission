@@ -49,6 +49,7 @@
             <li><a class="dropdown-item" href="#">Paragliding</a></li>
             <li><a class="dropdown-item" href="#">Boating</a></li>
             <li><a class="dropdown-item" href="#">Mountain Climbing</a></li>
+            <li><a class="dropdown-item" href="/adduser">Add User</a></li>
           </ul>
         </li>
         @endauth

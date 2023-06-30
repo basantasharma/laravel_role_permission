@@ -8,6 +8,10 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+    public function showAddUserPage(Request $request)
+    {
+        return view('adduser');
+    }
     //
     public function getUserById(Request $request)
     {

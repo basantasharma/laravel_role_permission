@@ -26,6 +26,7 @@ use App\Http\Controllers\PermissionsController;
 //     return view('index');
 // });
 Route::get('/', [HomeController::class, 'showHomePage'])->name('index');
+Route::get('/adduser', [UserController::class, 'showAddUserPage'])->name('adduser');
 
 Route::get('/login', [LoginController::class, 'showLoginPage'])->name('login');
 Route::post('/login', [LoginController::class, 'startLogin'])->name('login');
