@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
@@ -10,6 +12,10 @@ use App\Http\Controllers\UsersPermissionsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionsController;
+use App\Http\Controllers\EmailVarificationController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +42,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'showRegisterPage'])->name('register');
 Route::post('/register', [RegisterController::class, 'startRegistration'])->name('register');
 
+
 Route::get('/deleteallusers', [UserController::class, 'deleteAllUsers'])->name('deleteAllusers')->middleware('auth');
 Route::get('/getallusers', [UserController::class, 'getAllUsers'])->name('getAllusers')->middleware('auth');
 
@@ -60,6 +67,16 @@ Route::post('/adduserpermission', [UsersPermissionsController::class, 'addUserPe
 Route::post('/removeuserpermission', [UsersPermissionsController::class, 'removeUserPermission'])->name('removeUserPermission')->middleware('auth');
 Route::get('/deletealluserpermission', [UsersPermissionsController::class, 'deleteAllUserPermissions'])->name('deleteAlluserPermission')->middleware('auth');
 
+
+Route::get('/email/verify',[EmailVarificationController::class, 'index'])->middleware('auth')->name('verification.notice');
+
+
+ 
+Route::get('/email/verify/{id}/{hash}', [EmailVarificationController::class, 'emailVerify'])->middleware(['auth', 'signed'])->name('verification.verify');
+
+
+ 
+Route::post('/email/verification-notification',[EmailVarificationController::class, 'sendEmailVerificationNotification'])->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 // Route::middleware([])->group(function () {
 Route::middleware(['auth', 'role:admin'])->group(function () {

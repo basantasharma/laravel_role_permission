@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+
+use Illuminate\Auth\Events\Registered;
+
+
 class RegisterController extends Controller
 {
     //
@@ -34,12 +38,20 @@ class RegisterController extends Controller
 
         if(!is_null($user))
         {
-            if(\Auth::attempt($request->only('email', 'password')))
-            {
-                return redirect('/')->with('success', "Account successfully registered.");
-                
-            }
+            event(new Registered($user));
+
+            //now send the verification link to the user 
+            // we can use mail function
+
+
+
+            // if(\Auth::attempt($request->only('email', 'password')))
+            // {
+            //     return redirect('/')->with('success', "Account successfully registered.");
             
+            // }
+            
+                return redirect('/')->with('success', "Account successfully registered.")->with('info', "Please verify your email address before proceduring any further");
         }
         else
         {

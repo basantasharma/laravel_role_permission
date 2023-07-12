@@ -42,10 +42,10 @@ return [
         ],
 
 
-        // 'admin' =>  [
-        //     'driver'    =>  'session',
-        //     'provider'  =>  'admins'
-        // ],
+        'admin' =>  [
+            'driver'    =>  'session',
+            'provider'  =>  'admins'
+        ],
     ],
 
     /*
@@ -77,10 +77,10 @@ return [
         // ],
 
 
-        // 'admins'    =>  [
-        //     'driver'    =>  'eloquent',
-        //     'model'     =>  App\Models\Role::class,
-        // ],
+        'admins'    =>  [
+            'driver'    =>  'eloquent',
+            'model'     =>  App\Models\Role::class,
+        ],
     ],
 
     /*

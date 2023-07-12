@@ -8,7 +8,7 @@
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
           <div class="card shadow-2-strong" style="border-radius: 1rem;">
             <div class="card-body p-5 text-left">
-              <form action="/register" method="post">
+              <form action="#" method="post">
                 @csrf
                 @method('post')
                 <h3 class="mb-1 text-center">Add User</h3>
