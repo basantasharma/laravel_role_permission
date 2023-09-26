@@ -1,9 +1,9 @@
 @extends('./layouts/base')
 @section('title', 'Index')
-
-@section('body')
-
-
+@section('headerLeft', 'Home')
+@section('home', 'active')
+@section('sidebar')
+{{-- 
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -42,9 +42,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-{{-- this section is for booking a ticket for a user --}}
 <section class="vh-60" style="background: url(https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg) no-repeat fixed; background-size: cover;">
-  {{-- <section class="vh-60" style="background: linear-gradient(90deg, rgb(255, 114, 114), rgb(255, 190, 116), rgb(246, 255, 116));"> --}}
   <div class="container py-5 h-60">
     <div class="row d-flex justify-content-center align-items-center h-60">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -62,13 +60,11 @@
               <div class="col-md-6">
                 <label for="typeServiceX-2" class="form-label">Service</label>
                 <select name="role" class="form-select" aria-label="Default select example" id="typeServiceX-2">
-                  {{-- <option selected>Select Service</option> --}}
                   <option value="boating">Boating</option>
                   <option value="paragliding">Paragliding</option>
                   <option value="mountain climbing">Mountain Climbing</option>
                 </select>
               </div>
-              {{-- <div class="col-12"> --}}
                 <div class="col-md-4">
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
@@ -93,7 +89,6 @@
                   <label for="foreign_ticket" class="form-label">Number of tickets </label>
                   <input type="Number" class="form-control" id="foreign_ticket">
                 </div>
-              {{-- </div> --}}
               <div class="col-12">
                 <label for="inputAddress" class="form-label">Select date</label>
                 <input type="datetime-local" class="form-control" id="inputAddress" placeholder="1234 Main St" data-mdb-disable-past>
@@ -131,4 +126,5 @@
     </div>
   </div>
 </section>
+--}}
 @endsection

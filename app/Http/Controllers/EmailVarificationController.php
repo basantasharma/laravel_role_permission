@@ -10,7 +10,7 @@ class EmailVarificationController extends Controller
     //
     public function index()
     {
-        return view('auth.verify-email');
+        return view('auth.verify');
     }
 
 

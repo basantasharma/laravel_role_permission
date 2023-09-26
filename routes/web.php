@@ -12,6 +12,7 @@ use App\Http\Controllers\UsersPermissionsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionsController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmailVarificationController;
 
 
@@ -32,7 +33,7 @@ use App\Http\Controllers\EmailVarificationController;
 //     return view('index');
 // });
 Route::get('/', [HomeController::class, 'showHomePage'])->name('index');
-Route::get('/adduser', [UserController::class, 'showAddUserPage'])->name('adduser');
+Route::get('/adduser', [UserController::class, 'showAddUserPage'])->name('adduser')->middleware(['auth', 'verified']);;
 
 Route::get('/login', [LoginController::class, 'showLoginPage'])->name('login');
 Route::post('/login', [LoginController::class, 'startLogin'])->name('login');
@@ -41,6 +42,9 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/register', [RegisterController::class, 'showRegisterPage'])->name('register');
 Route::post('/register', [RegisterController::class, 'startRegistration'])->name('register');
+
+Route::get('/dashboard', [DashboardController::class, 'showDashboardPage'])->name('dashboard')->middleware('auth');
+
 
 
 Route::get('/deleteallusers', [UserController::class, 'deleteAllUsers'])->name('deleteAllusers')->middleware('auth');
@@ -72,7 +76,8 @@ Route::get('/email/verify',[EmailVarificationController::class, 'index'])->middl
 
 
  
-Route::get('/email/verify/{id}/{hash}', [EmailVarificationController::class, 'emailVerify'])->middleware(['auth', 'signed'])->name('verification.verify');
+Route::get('/email/verify/{id}/{hash}', [EmailVarificationController::class, 'emailVerify'])->middleware(['signed'])->name('verification.verify');
+// Route::get('/email/verify/{id}/{hash}', [EmailVarificationController::class, 'emailVerify'])->middleware(['auth', 'signed'])->name('verification.verify');
 
 
  

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+
 use Illuminate\Http\Request;
 
 
@@ -14,6 +15,14 @@ class RegisterController extends Controller
     //
     public function showRegisterPage()
     {
+        if(\Auth::user())
+        {
+            \Auth::logout(); //this is considered as leatest method
+ 
+            $request->session()->invalidate();
+     
+            $request->session()->regenerateToken();
+        }
         return view('register');
     }
 
