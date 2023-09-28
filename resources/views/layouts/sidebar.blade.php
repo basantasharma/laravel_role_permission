@@ -30,32 +30,32 @@
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link @yield('account')"><i class="nav-icon fa-solid fa-user-secret"></i>
+              <a href="/account" class="nav-link @yield('account')"><i class="nav-icon fa-solid fa-user-secret"></i>
                 <p>Account</p>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link @yield('routersetting')"><i class="nav-icon fa-solid fa-wifi"></i>
+              <a href="/router" class="nav-link @yield('routersetting')"><i class="nav-icon fa-solid fa-wifi"></i>
                 <p>Router Setting</p>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link @yield('support')"><i class="nav-icon fa-solid fa-ticket"></i>
+              <a href="/support" class="nav-link @yield('support')"><i class="nav-icon fa-solid fa-ticket"></i>
                 <p>Support</p>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link @yield('timeline')"><i class="nav-icon fa-solid fa-timeline"></i>
+              <a href="/timeline" class="nav-link @yield('timeline')"><i class="nav-icon fa-solid fa-timeline"></i>
                 <p>Timeline</p>
               </a>
             </li>
             @endauth
 
             <li class="nav-item">
-              <a href="#" class="nav-link @yield('offers')"><i class="nav-icon fa-solid fa-bullhorn"></i>
+              <a href="/offers" class="nav-link @yield('offers')"><i class="nav-icon fa-solid fa-bullhorn"></i>
                 <p>Offers</p>
               </a>
             </li>

@@ -1,7 +1,7 @@
 @extends('./layouts/base')
-@section('title', 'Setting')
-@section('headerLeft', 'Router')
-@section('routersetting', 'active')
+@section('title', 'Offers')
+@section('headerLeft', 'Offers')
+@section('offers', 'active')
 
 
 @section('body')

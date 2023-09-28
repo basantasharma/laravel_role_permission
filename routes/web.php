@@ -13,6 +13,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\RouterSettingController;
+use App\Http\Controllers\SupportController;
+use App\Http\Controllers\OffersController;
+use App\Http\Controllers\TimelineController;
 use App\Http\Controllers\EmailVarificationController;
 
 
@@ -44,6 +49,11 @@ Route::get('/register', [RegisterController::class, 'showRegisterPage'])->name('
 Route::post('/register', [RegisterController::class, 'startRegistration'])->name('register');
 
 Route::get('/dashboard', [DashboardController::class, 'showDashboardPage'])->name('dashboard')->middleware('auth');
+Route::get('/account', [AccountController::class, 'showAccountPage'])->name('account')->middleware('auth');
+Route::get('/router', [RouterSettingController::class, 'showRouterSettingPage'])->name('router')->middleware('auth');
+Route::get('/support', [SupportController::class, 'showSupportPage'])->name('support')->middleware('auth');
+Route::get('/offers', [OffersController::class, 'showOffersPage'])->name('offers');
+Route::get('/timeline', [TimelineController::class, 'showTimelinePage'])->name('timeline');
 
 
 

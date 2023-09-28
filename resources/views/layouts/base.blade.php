@@ -21,11 +21,10 @@
     <div class="app-wrapper">
         @include('layouts.navigation')
         @include('layouts.sidebar')
-        @yield('sidebar')
+        {{-- @yield('sidebar') --}}
         <main class="app-main">
-            <div class="app-content"><!--begin::Container-->
+            <div class="app-content-header"><!--begin::Container-->
                 <div class="container-fluid">
-
                     <div class="row">
                         <div class="col-sm-6">
                             <h3 class="mb-0">@yield('headerLeft')</h3>
@@ -39,54 +38,58 @@
                             </ol>
                         </div>
                     </div><!--end::Row-->
+                </div>
+            </div>
 
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success d-flex align-items-center" role="alert">
-                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-                            <div>
-                                {{ $message }}
-                            </div>
-                        </div>
-                    @endif
-                
-                    @if($message = Session::get('failed'))
-                        <div class="alert alert-danger d-flex align-items-center" role="alert">
-                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                            <div>
-                                {{ $message }}
-                            </div>
-                        </div>
-                    @endif
-                
-                    @if ($message = Session::get('info'))      
-                        <div class="alert alert-primary d-flex align-items-center" role="alert">
-                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
-                            <div>
-                                {{ $message }}
-                            </div>
-                        </div>
-                    @endif
-                    @if ($message = Session::get('warning'))      
-                        <div class="alert alert-primary d-flex align-items-center" role="alert">
-                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                            <div>
-                                {{ $message }}
-                            </div>
-                        </div>
-                    @endif
-                
-                    @if($errors->any())
-                        @foreach ($errors->all() as $error)
-                            <div class="alert alert-danger d-flex align-items-center" role="alert">
-                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                                <div>
-                                    {{ $error }}
+            <div class="app-content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            @if ($message = Session::get('success'))
+                                <div class="alert alert-success d-flex align-items-center" role="alert">
+                                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                                    <div>
+                                        {{ $message }}
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
-                    @endif
-
-                    @yield('body')
+                            @endif
+                            @if($message = Session::get('failed'))
+                                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                    <div>
+                                        {{ $message }}
+                                    </div>
+                                </div>
+                            @endif
+                            @if ($message = Session::get('info'))      
+                                <div class="alert alert-primary d-flex align-items-center" role="alert">
+                                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+                                    <div>
+                                        {{ $message }}
+                                    </div>
+                                </div>
+                            @endif
+                            @if ($message = Session::get('warning'))      
+                                <div class="alert alert-primary d-flex align-items-center" role="alert">
+                                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                    <div>
+                                        {{ $message }}
+                                    </div>
+                                </div>
+                            @endif
+                            @if($errors->any())
+                                @foreach ($errors->all() as $error)
+                                    <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                        <div>
+                                            {{ $error }}
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
+                        </div>
+                    </div>
+                        @yield('body')
                 </div>
             </div>
         </main>
