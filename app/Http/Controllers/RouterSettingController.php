@@ -31,6 +31,26 @@ class RouterSettingController extends Controller
         }
     }
 
+    public function modifySSID($id = '00259E-EG8141A5-48575443F6E9A3A4', $SSID="")
+    {
+        $url = 'http://192.168.1.4:7557/devices/'.$id.'/tasks?connection_request';
+        $requiredData = '{"name": "setParameterValues", "parameterValue": "[["InternetGatewayDevice.LANDevice.1.WANConfiguration.1.SSID", "'.$ssid.'", "xsd:string"]]"}';
+        $ch1 = curl_init($refreshUrl);
+        curl_setopt($ch1, CURLOPT_POST, true);
+        curl_setopt($ch1, CURLOPT_POSTFIELDS, $requiredData);
+        curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
+        $response1 = curl_exec($ch1);
+        curl_close($ch1);
+        if($response1)
+        {
+            return $response1;
+        }
+        else 
+        {
+            return false;
+        }
+    }
+
     public function getActiveDevices()
     {
         $deviceId = '00259E-EG8141A5-48575443F6E9A3A4';
