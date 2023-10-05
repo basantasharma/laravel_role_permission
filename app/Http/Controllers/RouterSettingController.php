@@ -31,11 +31,11 @@ class RouterSettingController extends Controller
         }
     }
 
-    public function modifySSID($id = '00259E-EG8141A5-48575443F6E9A3A4', $SSID="")
+    public function modifySSID($id = '00259E-EG8141A5-48575443F6E9A3A4', $SSID="AstavisionInfosys")
     {
         $url = 'http://192.168.1.4:7557/devices/'.$id.'/tasks?connection_request';
-        $requiredData = '{"name": "setParameterValues", "parameterValue": "[["InternetGatewayDevice.LANDevice.1.WANConfiguration.1.SSID", "'.$ssid.'", "xsd:string"]]"}';
-        $ch1 = curl_init($refreshUrl);
+        $requiredData = '{"name": "setParameterValues", "parameterValue": "[["InternetGatewayDevice.LANDevice.1.WANConfiguration.1.SSID", "'.$SSID.'", "xsd:string"]]"}';
+        $ch1 = curl_init($url);
         curl_setopt($ch1, CURLOPT_POST, true);
         curl_setopt($ch1, CURLOPT_POSTFIELDS, $requiredData);
         curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
@@ -50,6 +50,66 @@ class RouterSettingController extends Controller
             return false;
         }
     }
+
+    public function modifyPassword($id = '00259E-EG8141A5-48575443F6E9A3A4', $password="12345678")
+    {
+        $url = 'http://192.168.1.4:7557/devices/'.$id.'/tasks?connection_request';
+        $requiredData = '{"name": "setParameterValues", "parameterValue": "[["InternetGatewayDevice.LANDevice.1.WANConfiguration.1.PreSharedKey.1.PreSharedKey", "'.$password.'", "xsd:string"]]"}';
+        $ch1 = curl_init($url);
+        curl_setopt($ch1, CURLOPT_POST, true);
+        curl_setopt($ch1, CURLOPT_POSTFIELDS, $requiredData);
+        curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
+        $response1 = curl_exec($ch1);
+        curl_close($ch1);
+        if($response1)
+        {
+            return $response1;
+        }
+        else 
+        {
+            return false;
+        }
+    }
+
+    public function modifyChannel($id = '00259E-EG8141A5-48575443F6E9A3A4', $channel=7)
+    {
+        $url = 'http://192.168.1.4:7557/devices/'.$id.'/tasks?connection_request';
+        $requiredData = '{"name": "setParameterValues", "parameterValue": "[["InternetGatewayDevice.LANDevice.1.WANConfiguration.1.Channel", "'.$channel.'"]]"}';
+        $ch1 = curl_init($url);
+        curl_setopt($ch1, CURLOPT_POST, true);
+        curl_setopt($ch1, CURLOPT_POSTFIELDS, $requiredData);
+        curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
+        $response1 = curl_exec($ch1);
+        curl_close($ch1);
+        if($response1)
+        {
+            return $response1;
+        }
+        else 
+        {
+            return false;
+        }
+    }
+
+    public function hideSSID($id = '00259E-EG8141A5-48575443F6E9A3A4', $value = true)
+    {
+        $url = 'http://192.168.1.4:7557/devices/'.$id.'/tasks?connection_request';
+        $requiredData = '{"name": "setParameterValues", "parameterValue": "[["InternetGatewayDevice.LANDevice.1.WANConfiguration.1.SSIDAdvertisementEnabled", "'.$value.'"]]"}';
+        $ch1 = curl_init($url);
+        curl_setopt($ch1, CURLOPT_POST, true);
+        curl_setopt($ch1, CURLOPT_POSTFIELDS, $requiredData);
+        curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
+        $response1 = curl_exec($ch1);
+        curl_close($ch1);
+        if($response1)
+        {
+            return $response1;
+        }
+        else 
+        {
+            return false;
+        }
+    }    
 
     public function getActiveDevices()
     {
