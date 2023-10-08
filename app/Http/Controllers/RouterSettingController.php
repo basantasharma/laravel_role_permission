@@ -91,7 +91,7 @@ class RouterSettingController extends Controller
         }
     }
 
-    public function hideSSID($id = '00259E-EG8141A5-48575443F6E9A3A4', $value = true)
+    public function hideUnhideSSID($id = '00259E-EG8141A5-48575443F6E9A3A4', $value = true)
     {
         $url = 'http://192.168.1.4:7557/devices/'.$id.'/tasks?connection_request';
         $requiredData = '{"name": "setParameterValues", "parameterValue": "[["InternetGatewayDevice.LANDevice.1.WANConfiguration.1.SSIDAdvertisementEnabled", "'.$value.'"]]"}';
