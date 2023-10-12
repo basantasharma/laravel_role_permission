@@ -140,11 +140,14 @@ class RouterSettingController extends Controller
             {
                 if($host['Active']['_value'] === true)
                 {
-                    array_push($activeDevice, $host['HostName']['_value']);
-                    print_r($host['HostName']['_value'].$host['IPAddress']['_value'].$host['MACAddress']['_value']);
-                    echo "<br>";
+                    // array_push($activeDevice, $host['HostName']['_value']);
+                    $activeDevice[] = $host['HostName']['_value'];
+                    // print_r($host['HostName']['_value'].$host['IPAddress']['_value'].$host['MACAddress']['_value']);
+                    // echo "<br>";
                 }
             }
+            print_r($activeDevice);
+            // echo "<br>"
             // }
     }
 
