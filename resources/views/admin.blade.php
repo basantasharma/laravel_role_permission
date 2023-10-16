@@ -1,5 +1,5 @@
 @extends('./layouts/base')
-@section('title', 'Admin')
+@section('title', 'Admin-Telnet')
 
 @section('body')
 <h1>This is admin panel</h1>

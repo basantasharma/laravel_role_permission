@@ -1,5 +1,5 @@
 @extends('./layouts/base')
-@section('title', 'Register')
+@section('title', 'Register-Telnet')
 @section('headerLeft', 'Register')
 @section('body')
 <div class="row">

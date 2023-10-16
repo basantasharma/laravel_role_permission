@@ -1,5 +1,5 @@
 @extends('./layouts/base')
-@section('title', 'Index')
+@section('title', 'Telnet')
 @section('headerLeft', 'Home')
 @section('home', 'active')
 @section('sidebar')

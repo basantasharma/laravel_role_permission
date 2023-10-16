@@ -9,7 +9,7 @@
       </g>
   </svg>
     <!--begin::Brand Text-->
-    <span class="brand-text fw-light">Astavision</span>
+    <span class="brand-text fw-light">Telnet</span>
     <!--end::Brand Text--></a><!--end::Brand Link-->
   </div><!--end::Sidebar Brand--><!--begin::Sidebar Wrapper-->
   <div class="sidebar-wrapper">

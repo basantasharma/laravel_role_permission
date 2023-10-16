@@ -1,5 +1,5 @@
 @extends('./layouts/base')
-@section('title', 'Setting')
+@section('title', 'Setting-Telnet')
 @section('headerLeft', 'Router')
 @section('routersetting', 'active')
 

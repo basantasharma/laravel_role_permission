@@ -1,5 +1,5 @@
 @extends('./layouts/base')
-@section('title', 'Add User')
+@section('title', 'Add User-Telnet')
 
 @section('body')
 <section class="vh-60" style="background-color: #508bfc;">
