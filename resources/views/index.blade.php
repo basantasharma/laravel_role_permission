@@ -3,6 +3,21 @@
 @section('headerLeft', 'Home')
 @section('home', 'active')
 @section('sidebar')
+
+@section('body')
+
+<div class=" ">
+  <video autoplay muted loop id="introVideo"  style="object-fit: cover;position: absolute; top: 0; left: 0; width: 100%; height: 350px;">
+    <source src="/videos/An_internet_service_V1.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+</div>
+
+
+
+
+@endsection
 {{-- 
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
