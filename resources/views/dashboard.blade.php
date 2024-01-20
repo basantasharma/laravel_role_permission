@@ -6,8 +6,9 @@
 
 @section('body')
 
-<div class="row justify-content-center mb-4">
-
+<div class="row justify-content-start mb-4">
+    {{-- <div class="row justify-content-center mb-4"> --}}
+    
     <div class="col-12 col-xxl-2 col-xl-6  col-lg-6 col-md-12 col-sm-12">
         <div class="card card-info">
             <div class="card-header">
@@ -66,8 +67,7 @@
         </div><!-- /.card -->
     </div><!-- /.col -->
 </div>
-
-<div class="row justify-content-center mb-4">
+{{-- <div class="row justify-content-center mb-4">--}}
     <div class="col-12 col-xxl-5 col-xl-6  col-lg-6 col-md-12 col-sm-12">
         <div class="card  card-warning">
             <div class="card-header">
@@ -125,7 +125,7 @@
         </div><!-- /.card -->
     </div><!-- /.col -->
     
-</div>
+{{-- </div> --}}
 
 
 

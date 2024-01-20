@@ -70,6 +70,13 @@
                 <p>Contacts</p>
               </a>
             </li>
+            @role('admin')
+              <li class="nav-item">
+                <a href="/addradiususer" class="nav-link @yield('contacts')"><i class="fa-solid fa-user-plus"></i>
+                  <p>Add Radius user</p>
+                </a>
+              </li>
+            @endrole
             
             
               

@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RadiusUserController;
 use App\Http\Controllers\UsersRolesController;
 use App\Http\Controllers\UsersPermissionsController;
 use App\Http\Controllers\AdminController;
@@ -38,7 +39,7 @@ use App\Http\Controllers\EmailVarificationController;
 //     return view('index');
 // });
 Route::get('/', [HomeController::class, 'showHomePage'])->name('index');
-Route::get('/adduser', [UserController::class, 'showAddUserPage'])->name('adduser')->middleware(['auth', 'verified']);;
+// Route::get('/adduser', [UserController::class, 'showAddUserPage'])->name('adduser')->middleware(['auth', 'verified']);;
 
 Route::get('/login', [LoginController::class, 'showLoginPage'])->name('login');
 Route::post('/login', [LoginController::class, 'startLogin'])->name('login');
@@ -97,6 +98,7 @@ Route::post('/email/verification-notification',[EmailVarificationController::cla
 Route::middleware(['auth', 'role:admin'])->group(function () {
 //Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'showAdminPage'])->name('admin');
+    Route::get('/addradiususer', [RadiusUserController::class, 'index'])->name('radiususerindex');
 
     //Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
     //Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
